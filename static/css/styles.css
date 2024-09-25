@@ -1,0 +1,17 @@
+#columns{
+    display: flex;
+    background-color: aqua;
+    padding: 5px;
+}
+
+#my-resources{
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+#function{
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}

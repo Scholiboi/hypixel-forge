@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='/css/styles.css') }}">
+    <title>Forge Calculator</title>
+</head>
+<body>
+    <h1>Forge Calculator</h1>
+    <p>Forge Calculator is a simple tool to calculate the amount of resources needed to forge a certain item in Hypixel Skyblock.</p>
+    <p>Below is your inventory</p>
+    <form method="post" action="/submit">
+        <label for="dropdown">Choose an option:</label>
+        <select id="dropdown" name="dropdown">
+            {% for option in options %}
+                <option value="{{ option }}">{{ option }}</option>
+            {% endfor %}
+        </select>
+        <button type="submit" >Submit</button>
+    </form>
+    <div id="columns">
+        <div id="my-resources">
+        {% for i in my_resources %}
+            <p>{{i}}: {{my_resources[i]}}</p>
+        {% endfor %}
+        </div>
+        <div id="function">
+            {% block functions %}{% endblock %}
+        </div>
+    </div>
+</body>
+</html>
