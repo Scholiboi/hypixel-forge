@@ -1,0 +1,25 @@
+{
+    "golden_plate":{
+        "refined_diamond": 1,
+        "enchanted_gold_block": 2,
+        "glacite_jewel": 5
+    },
+    "mithril_plate":{
+        "refined_titanium": 1,
+        "refined_mithril": 5,
+        "golden_plate": 1
+    },
+    "x355": {
+        "refined_titanium": 8,
+        "refined_mithril": 8,
+        "golden_plate": 6,
+        "drill_motor": 1,
+        "fuel_canister": 1
+    },
+    "x655":{
+        "refined_titanium": 32,
+        "corleonite": 30,
+        "mithril_plate": 10,
+        "refined_diamond": 5
+    }
+}
