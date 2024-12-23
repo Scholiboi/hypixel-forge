@@ -41,6 +41,7 @@ const Resources = () => {
         <div className="resources-container">
             <Navbar transfer={transfer}/>
             <h3 className="resources-header">Available Resources</h3>
+            <Dropdown items={resources} />
             <div className="resources-list">
                 {final_resources.map((resource) => (
                     <div className="resource-item" key={resource.id}>
@@ -49,7 +50,7 @@ const Resources = () => {
                     </div>
                 ))}
             </div>
-            <Dropdown items={resources} />
+            
         </div>
     );
 };

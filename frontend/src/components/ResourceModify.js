@@ -46,6 +46,7 @@ const ResourceModify = () => {
 
     return (
         <div className="modify-container">
+            <Navbar />
             <h1 className="modify-header">Modify Resources</h1>
             <input
                 className="search-input"
@@ -60,7 +61,15 @@ const ResourceModify = () => {
                         <span className="resource-name">{item.name}</span>
                         <div className="amount-controls">
                             <button onClick={() => decrementAmount(index)}>-</button>
-                            <span>{item.amount}</span>
+                            <input 
+                                type='number'
+                                value={item.amount}
+                                onChange={(e) => {
+                                    const updatedResources = [...searchedResources];
+                                    updatedResources[index].amount = parseInt(e.target.value);
+                                    setSearchedResources(updatedResources);
+                                }}
+                            />
                             <button onClick={() => incrementAmount(index)}>+</button>
                         </div>
                     </div>

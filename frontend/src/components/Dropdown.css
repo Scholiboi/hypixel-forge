@@ -2,7 +2,7 @@
     position: relative;
     background-color: var(--card-background);
     border-radius: 10px;
-    padding: 20px;
+    padding: 15px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     margin: 20px auto;
     max-width: 600px;
@@ -10,26 +10,46 @@
 
 .search-input {
     width: 100%;
-    padding: 12px;
-    border: 2px solid var(--accent-color);
-    border-radius: 8px;
-    font-size: 1rem;
-    background-color: var(--card-background);
-    margin-bottom: 1rem;
+    padding: 10px 15px;
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    color: var(--text-color);
+    background-color: white;
+    margin-bottom: 0.5rem;
+    transition: all 0.3s ease;
+    outline: none;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    box-sizing: border-box;
+}
+
+.search-input:focus {
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.1);
+}
+
+.search-input:hover {
+    border-color: #cacaca;
+}
+
+.search-input::placeholder {
+    color: #95a5a6;
+    font-size: 0.9rem;
 }
 
 .dropdown-ul {
     position: absolute;
-    width: 100%;
+    width: calc(100% - 40px);
     max-height: 300px;
     overflow-y: auto;
-    background-color: var(--card-background);
+    background-color: white;
     border-radius: 8px;
-    box-shadow: var(--shadow);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     z-index: 1000;
     margin-top: 4px;
     padding: 0;
     list-style: none;
+    border: 1px solid #e0e0e0;
 }
 
 .dropdown-li {

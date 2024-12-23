@@ -1,17 +1,18 @@
-#navbar {
+/* Common navbar styles */
+nav {
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
-    background-color: var(--primary-color);
     padding: 1rem 2rem;
-    box-shadow: var(--shadow);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     z-index: 1001;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
+/* Header styles */
 #Header {
     font-size: 1.5rem;
     font-weight: bold;
@@ -19,16 +20,79 @@
     margin: 0;
 }
 
-#resource a, #Sandbox a {
-    color: white;
-    text-decoration: none;
-    background-color: var(--secondary-color);
-    padding: 0.5rem 1rem;
-    border-radius: 5px;
-    transition: all 0.3s ease;
+/* Link container styles */
+nav p {
+    margin: 0;
 }
 
-#resource a:hover, #Sandbox a:hover {
-    background-color: var(--accent-color);
+/* Link styles */
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 0.8rem 1.2rem;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+/* Navbar variants */
+#navbar-home {
+    background-color: #2c3e50;
+}
+
+#navbar-home a {
+    background-color: #3498db;
+}
+
+#navbar-home a:hover {
+    background-color: #2980b9;
     transform: translateY(-2px);
+}
+
+#navbar-forge {
+    background-color: #3498db;
+}
+
+#navbar-forge a {
+    background-color: #2c3e50;
+}
+
+#navbar-forge a:hover {
+    background-color: #34495e;
+    transform: translateY(-2px);
+}
+
+#navbar-default {
+    background-color: #34495e;
+}
+
+#navbar-default a {
+    background-color: #3498db;
+}
+
+#navbar-default a:hover {
+    background-color: #2980b9;
+    transform: translateY(-2px);
+}
+
+/* Navigation items container */
+.nav-items {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    nav {
+        padding: 0.8rem 1rem;
+    }
+    
+    #Header {
+        font-size: 1.2rem;
+    }
+    
+    nav a {
+        padding: 0.6rem 1rem;
+    }
 }

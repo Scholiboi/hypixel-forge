@@ -3,6 +3,7 @@ import axios from "axios";
 import {useNavigate} from "react-router-dom";
 import Dropdown from "./Dropdown";
 import './Sandbox.css';
+import Navbar from "./navbar";
 
 const TreeNode = ({ node }) => {
     const [expanded, setExpanded] = useState(false);
@@ -14,11 +15,11 @@ const TreeNode = ({ node }) => {
         <div className="tree-node">
             <p onClick={() => setExpanded(!expanded)}>
                 <span className="tree-amount">{node.amount}×</span>
-                <span>{node.name}</span>
+                <span className="tree-name">{node.name}</span>
                 {hasChildren && (
                     <span className="tree-toggle">
-            {expanded ? "▼" : "▶"}
-          </span>
+                        {expanded ? "▼" : "▶"}
+                    </span>
                 )}
             </p>
             {expanded && hasChildren && (
@@ -65,30 +66,31 @@ const Sandbox = () => {
 
     return (
         <div className="sandbox-container">
+            <Navbar />
             <div className="sandbox-header">
-                <h1>Forge Menu</h1>
+                <h1>Recipe Viewer</h1>
                 <p>Search and explore crafting recipes</p>
             </div>
             <div className="mode-select">
-                <p onClick={forgeMode}>Forge Mode</p>
+                <p onClick={forgeMode}>Switch to Forge Mode</p>
             </div>
             <Dropdown items={recipe_names} func={getRecipe} />
 
             {recipe && recipe.simple_recipe && recipe.full_recipe && (
                 <div className="recipe-details">
-                    <h2>{recipe.name}</h2>
+                    <h2>{recipe.name} Recipe</h2>
 
-                    <h3>Simple Recipe</h3>
+                    <h3>Required Materials</h3>
                     <ul className="simple-recipe-list">
                         {Object.entries(recipe.simple_recipe).map(([item, qty]) => (
                             <li key={item} className="simple-recipe-item">
-                                <span>{item}</span>
+                                <span className="item-name">{item}</span>
                                 <span className="tree-amount">{qty}×</span>
                             </li>
                         ))}
                     </ul>
 
-                    <h3>Full Recipe</h3>
+                    <h3>Crafting Tree</h3>
                     <div className="recipe-tree">
                         <TreeNode node={recipe.full_recipe} />
                     </div>
