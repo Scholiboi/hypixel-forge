@@ -1,0 +1,98 @@
+.sandbox-container {
+    max-width: 900px;
+    margin: 70px auto 0;
+    padding: 2rem;
+    background-color: var(--card-background);
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.sandbox-header {
+    text-align: center;
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+}
+
+.sandbox-header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.sandbox-header p {
+    color: var(--text-color);
+    opacity: 0.8;
+}
+
+.recipe-details {
+    margin-top: 2rem;
+    background-color: var(--card-background);
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    padding: 2rem;
+}
+
+.recipe-details h2 {
+    color: var(--secondary-color);
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+}
+
+.recipe-details h3 {
+    color: var(--primary-color);
+    font-size: 1.4rem;
+    margin: 1.5rem 0 1rem;
+}
+
+.simple-recipe-list {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.simple-recipe-item {
+    background-color: var(--card-background);
+    padding: 1rem;
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.recipe-tree {
+    margin-top: 1rem;
+    padding: 1rem;
+    background-color: var(--card-background);
+    border-radius: 6px;
+}
+
+.tree-node {
+    margin: 0.5rem 0;
+    padding-left: 1.5rem;
+}
+
+.tree-node p {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.tree-node p:hover {
+    background-color: var(--background-color);
+}
+
+.tree-amount {
+    color: #00C49A;
+    font-weight: 600;
+}
+
+.tree-toggle {
+    color: var(--secondary-color);
+    font-size: 0.8rem;
+}
