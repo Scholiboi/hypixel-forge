@@ -50,8 +50,8 @@ const Sandbox = () => {
 
     const recipe_names = recipesNames.map((recipe) => ({ name: recipe }));
 
-    const getRecipe = (name) => {
-        axios.get(`http://localhost:5000/sandbox/get-recipe/${name}`)
+    const getRecipe = (name, amount) => {
+        axios.get(`http://localhost:5000/sandbox/get-recipe/${name}/${amount}`)
             .then((response) => {
                 setRecipe(response.data);
             })

@@ -48,8 +48,8 @@ const Forging = () => {
 
     const recipe_names = recipes.map((recipe) => ({ name: recipe }));
 
-    const getRecipe = (name) => {
-        axios.get(`http://localhost:5000/sandbox/get-remaining-ingredients/${name}`)
+    const getRecipe = (name, amount) => {
+        axios.get(`http://localhost:5000/sandbox/get-remaining-ingredients/${name}/${amount}`)
             .then((response) => {
                 setRecipe(response.data);
             })

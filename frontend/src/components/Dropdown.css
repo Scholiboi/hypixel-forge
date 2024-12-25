@@ -1,83 +1,154 @@
-#Dropdown {
+.dropdown-container {
     position: relative;
     background-color: var(--card-background);
-    border-radius: 10px;
-    padding: 15px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    margin: 20px auto;
+    border-radius: 12px;
+    padding: 1.25rem;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    margin: 1.5rem auto;
     max-width: 600px;
+    transition: all 0.3s ease;
+}
+
+.input-group {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 0.5rem;
 }
 
 .search-input {
-    width: 100%;
-    padding: 10px 15px;
-    border: 1px solid #e0e0e0;
-    border-radius: 6px;
-    font-size: 0.95rem;
+    flex: 1;
+    padding: 0.75rem 1rem;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 1rem;
     color: var(--text-color);
     background-color: white;
-    margin-bottom: 0.5rem;
     transition: all 0.3s ease;
     outline: none;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-    box-sizing: border-box;
 }
 
-.search-input:focus {
+.amount-input {
+    width: 80px;
+    padding: 0.75rem 1rem;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 1rem;
+    color: var(--text-color);
+    background-color: white;
+    transition: all 0.3s ease;
+    outline: none;
+}
+
+.search-input:focus,
+.amount-input:focus {
     border-color: var(--secondary-color);
-    box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.1);
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
 }
 
-.search-input:hover {
-    border-color: #cacaca;
+.search-input:hover,
+.amount-input:hover {
+    border-color: var(--secondary-color);
 }
 
-.search-input::placeholder {
+.search-input::placeholder,
+.amount-input::placeholder {
     color: #95a5a6;
-    font-size: 0.9rem;
+    font-size: 0.95rem;
 }
 
-.dropdown-ul {
+.dropdown-list {
     position: absolute;
-    width: calc(100% - 40px);
+    left: 0;
+    right: 0;
     max-height: 300px;
     overflow-y: auto;
+    margin: 0.5rem;
+    padding: 0.5rem;
     background-color: white;
     border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
     z-index: 1000;
-    margin-top: 4px;
-    padding: 0;
-    list-style: none;
-    border: 1px solid #e0e0e0;
+    opacity: 0;
+    transform: translateY(-10px);
+    animation: dropdown 0.3s ease forwards;
 }
 
-.dropdown-li {
+@keyframes dropdown {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.dropdown-item {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 12px;
-    border-bottom: 1px solid rgba(0,0,0,0.1);
+    padding: 0.75rem 1rem;
+    margin: 0.25rem 0;
+    border-radius: 6px;
     cursor: pointer;
+    transition: all 0.2s ease;
 }
 
-.dropdown-li:last-child {
-    border-bottom: none;
+.dropdown-item:hover {
+    background-color: rgba(52, 152, 219, 0.1);
+    transform: translateX(5px);
 }
 
-.dropdown-li:hover {
-    background-color: var(--background-color);
-}
-
-.name {
+.item-name {
     font-weight: 500;
+    color: var(--text-color);
 }
 
-.count {
-    background-color: var(--primary-color);
+.item-count {
+    background-color: var(--secondary-color);
     color: white;
-    padding: 4px 8px;
+    padding: 0.25rem 0.75rem;
     border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
     min-width: 24px;
     text-align: center;
+    transition: all 0.2s ease;
+}
+
+.dropdown-item:hover .item-count {
+    background-color: var(--primary-color);
+    transform: scale(1.05);
+}
+
+/* Scrollbar Styling */
+.dropdown-list::-webkit-scrollbar {
+    width: 6px;
+}
+
+.dropdown-list::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 3px;
+}
+
+.dropdown-list::-webkit-scrollbar-thumb {
+    background: var(--secondary-color);
+    border-radius: 3px;
+}
+
+.dropdown-list::-webkit-scrollbar-thumb:hover {
+    background: var(--primary-color);
+}
+
+@media (max-width: 768px) {
+    .dropdown-container {
+        margin: 1rem;
+        padding: 1rem;
+    }
+
+    .input-group {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .amount-input {
+        width: 100%;
+    }
 }
