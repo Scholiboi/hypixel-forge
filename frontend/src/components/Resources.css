@@ -33,3 +33,42 @@
     transform: translateY(-2px);
     box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
+
+.refresh-button {
+    position: fixed;
+    top: 80px; 
+    right: 20px;
+    padding: 12px 24px;
+    background-color: var(--secondary-color);
+    color: white;
+    border: none;
+    border-radius: 30px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.refresh-button:hover {
+    background-color: var(--primary-color);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+.refresh-button:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+@media (max-width: 768px) {
+    .refresh-button {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+        right: 10px;
+    }
+}

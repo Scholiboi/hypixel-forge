@@ -24,30 +24,29 @@ def get_recipe_names():
 
 @sr_bp.route('/get-recipe/<name>/<int:amt>', methods=["GET"])
 def get_recipe(name,amt):
-    with open('recipes/forging.json') as f:
-        forging = json.load(f)
-    with open('recipes/gemstone_recipes.json') as f:
-        gemstone_recipes = json.load(f)
-    forging.update(gemstone_recipes)
-    if name not in forging:
-        return jsonify({'error': 'Recipe not found'}), 404
-
-    simple_recipe = forging[name]
-
-    for key in simple_recipe:
-        simple_recipe[key] = simple_recipe[key] * amt
-    
     def expand_recipe(current_name, multiplier=1):
         if current_name not in forging:
             return {'name': current_name, 'amount': multiplier}
         else:
             ingredients = []
             for item, qty in forging[current_name].items():
-                expanded = expand_recipe(item, qty*multiplier)
+                expanded = expand_recipe(item, qty * multiplier)
                 ingredients.append(expanded)
             return {'name': current_name, 'amount': multiplier, 'ingredients': ingredients}
 
+    with open('recipes/forging.json') as f:
+        forging = json.load(f)
+    with open('recipes/gemstone_recipes.json') as f:
+        gemstone_recipes = json.load(f)
+    forging.update(gemstone_recipes)
+
+    if name not in forging:
+        return jsonify({'error': 'Recipe not found'}), 404
+
+    simple_recipe = forging[name]
     expanded_recipe = expand_recipe(name, amt)
+    for key in simple_recipe:
+        simple_recipe[key] = simple_recipe[key] * amt
 
     response = {
         'name': name,
@@ -59,24 +58,15 @@ def get_recipe(name,amt):
 
 @sr_bp.route('/get-remaining-ingredients/<name>/<int:amt>', methods=["GET"])
 def remaining_ingredients(name, amt):
-    with open('recipes/forging.json') as f:
-        forging = json.load(f)
-    with open('recipes/gemstone_recipes.json') as f:
-        gemstone_recipes = json.load(f)
-    forging.update(gemstone_recipes)
-
-    my_resources = {resource.name: resource.amount for resource in Resource.query.all()}
-    messages = []
-    old = my_resources[name]
-    
     def build_recipe(current_item, multiplier=1):
         nonlocal my_resources
         for item, quantity in forging[current_item].items():
             if item in forging:
-                quantity -= my_resources[item]
-                composite_material(item, my_resources, quantity * multiplier)
-        check(current_item, multiplier)
+                composite_material(item, max(0,(quantity * multiplier)-my_resources[item])) # this composite material will check if this sub item already exists in our resources
 
+        # this check is for checking if (main) item can be crafted from smaller resources
+        # and will be called last
+        check(current_item, multiplier)
 
     def check(current_item, multiplier=1):
         nonlocal my_resources, messages
@@ -97,15 +87,16 @@ def remaining_ingredients(name, amt):
         for base_item, quantity_of_base_item in forging[current_item].items():
             my_resources[base_item] -= quantity_of_base_item * a
 
-    def composite_material(current_item, my_resources, multiplier=1):
+    def composite_material(current_item, multiplier=1):
         #making bigger units from smaller units upto maximum utilization
+        nonlocal my_resources
         for item, quantity in forging[current_item].items():
             if item in forging:
-                composite_material(item, my_resources, quantity * multiplier)
+                # quantity -= my_resources[item]
+                composite_material(item, max(0,(quantity * multiplier) - my_resources[item]))
             else:
                 pass
         check(current_item, multiplier)
-
 
     def expand_required_recipe(current_name, multiplier=1):
         nonlocal my_resources
@@ -139,6 +130,16 @@ def remaining_ingredients(name, amt):
                         ingredients.append(expanded)
             return {'name': current_name, 'amount': multiplier, 'ingredients': ingredients}
 
+    with open('recipes/forging.json') as f:
+        forging = json.load(f)
+    with open('recipes/gemstone_recipes.json') as f:
+        gemstone_recipes = json.load(f)
+    forging.update(gemstone_recipes)
+
+    my_resources = {resource.name: resource.amount for resource in Resource.query.all()}
+    messages = []
+    old = my_resources[name]
+
     build_recipe(name, amt)
     new = my_resources[name]
     
@@ -154,3 +155,41 @@ def remaining_ingredients(name, amt):
     }
 
     return jsonify(response), 200
+
+@sr_bp.route('/craft', methods=["POST"])
+def craft():
+    # print(request)
+    def craft_item(current_item, multiplier=1):
+        nonlocal my_resources
+        if current_item in forging:
+            if my_resources[current_item] < multiplier:
+                multiplier -= my_resources[current_item]
+                my_resources[current_item] = 0
+            else:
+                my_resources[current_item] -= multiplier
+                multiplier = 0
+            for item, qty in forging[current_item].items():
+                craft_item(item, qty*multiplier)
+        else:
+            my_resources[current_item] -= multiplier
+
+    with open('recipes/forging.json') as f:
+        forging = json.load(f)
+    with open('recipes/gemstone_recipes.json') as f:
+        gemstone_recipes = json.load(f)
+    forging.update(gemstone_recipes)
+    my_resources = {resource.name: resource.amount for resource in Resource.query.all()}
+
+    data = request.json
+    name = data['name']  
+    amt = int(data['amount'])
+    my_resources[name] += amt
+    # print(my_resources)
+    for item, qty in forging[name].items():
+        craft_item(item, qty*amt)
+    # print(my_resources)
+    for resource in Resource.query.all():
+        resource.amount = my_resources[resource.name]
+    db.session.commit()
+
+    return jsonify({'message': 'Crafted successfully'}), 201

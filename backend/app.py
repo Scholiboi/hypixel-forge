@@ -3,6 +3,7 @@ from flask_cors import CORS
 from models import db, Resource
 from routes.resource_route import rr_bp
 from routes.sandbox_route import sr_bp
+from routes.inventoryresources_route import ir_bp
 
 app = Flask(__name__)
 CORS(app)
@@ -13,6 +14,7 @@ db.init_app(app)
 
 app.register_blueprint(rr_bp)
 app.register_blueprint(sr_bp)
+app.register_blueprint(ir_bp)
 
 if __name__ == '__main__':
     app.run(debug=True)

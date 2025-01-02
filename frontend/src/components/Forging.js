@@ -34,6 +34,8 @@ const TreeNode = ({node}) => {
 const Forging = () => {
     const [recipes, setRecipes] = useState([]);
     const [recipe, setRecipe] = useState(null);
+    const [craftable, setCraftable] = useState(false);
+    const [amount, setAmount] = useState(1);
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -49,9 +51,14 @@ const Forging = () => {
     const recipe_names = recipes.map((recipe) => ({ name: recipe }));
 
     const getRecipe = (name, amount) => {
+        setCraftable(false);
+        setAmount(amount);
         axios.get(`http://localhost:5000/sandbox/get-remaining-ingredients/${name}/${amount}`)
             .then((response) => {
                 setRecipe(response.data);
+                if(response.data.full_recipe.amount === 0){
+                    setCraftable(true);
+                }
             })
             .catch((err) => {
                 console.log(err);
@@ -59,9 +66,27 @@ const Forging = () => {
         // event.target.innerText = "";
     };
 
+    const craft = () => {
+        axios.post("http://localhost:5000/sandbox/craft", {name: recipe.full_recipe.name, amount: amount})
+            .then((response) => {
+                console.log(response.data);
+            })
+            .catch((err) => {
+                console.log(err);
+            });
+        setCraftable(false);
+        setRecipe(null);
+        setAmount(1);
+    }
 
     const viewMode = () => {
         navigate('/sandbox');
+    };
+
+    const refreshRecipe = () => {
+        if (recipe) {
+            getRecipe(recipe.full_recipe.name, amount);
+        }
     };
 
     return (
@@ -82,6 +107,10 @@ const Forging = () => {
                         <li key={index} className="message-item">{message}</li>
                     ))}
                 </ul>}
+                {recipe && craftable && <button className="craft-button" onClick={craft}>Craft</button>}
+                {recipe && <button className="refresh-button" onClick={refreshRecipe}>
+                    ↻ Refresh
+                </button>}
             </div>
         </div>
     );

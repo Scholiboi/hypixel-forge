@@ -9,7 +9,8 @@ const Resources = () => {
     const [resources, setResources] = useState([]);
     // const [searchedResources, setSearchedResources] = useState(null);
     const navigate = useNavigate();
-    useEffect(() => {
+
+    const fetchResources = () => {
         axios.get("http://localhost:5000/resources")
             .then((response) => {
                 const sortedResources = response.data.sort((a,b) => a.name.localeCompare(b.name));
@@ -18,6 +19,10 @@ const Resources = () => {
             .catch((err) => {
                 console.log(err);
             });
+    };
+
+    useEffect(() => {
+        fetchResources();
     }, []);
 
     // const searchResource = () => {
@@ -41,6 +46,9 @@ const Resources = () => {
         <div className="resources-container">
             <Navbar transfer={transfer}/>
             <h3 className="resources-header">Available Resources</h3>
+            <button className="refresh-button" onClick={fetchResources}>
+                ↻ Refresh
+            </button>
             <Dropdown items={resources} />
             <div className="resources-list">
                 {final_resources.map((resource) => (

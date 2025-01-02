@@ -17,6 +17,15 @@
     "Fine Jasper Gemstone": {
         "Flawed Jasper Gemstone": 80
     },
+    "Fine Onyx Gemstone": {
+        "Flawed Onyx Gemstone": 80
+    },
+    "Fine Opal Gemstone": {
+        "Flawed Opal Gemstone": 80
+    },
+    "Fine Peridot Gemstone": {
+        "Flawed Peridot Gemstone": 80
+    },
     "Fine Ruby Gemstone": {
         "Flawed Ruby Gemstone": 80
     },
@@ -43,6 +52,15 @@
     },
     "Flawed Jasper Gemstone": {
         "Rough Jasper Gemstone": 80
+    },
+    "Flawed Onyx Gemstone": {
+        "Rough Onyx Gemstone": 80
+    },
+    "Flawed Opal Gemstone": {
+        "Rough Opal Gemstone": 80
+    },
+    "Flawed Peridot Gemstone": {
+        "Rough Peridot Gemstone": 80
     },
     "Flawed Ruby Gemstone": {
         "Rough Ruby Gemstone": 80
@@ -71,6 +89,15 @@
     "Flawless Jasper Gemstone": {
         "Fine Jasper Gemstone": 80
     },
+    "Flawless Onyx Gemstone": {
+        "Fine Onyx Gemstone": 80
+    },
+    "Flawless Opal Gemstone": {
+        "Fine Opal Gemstone": 80
+    },
+    "Flawless Peridot Gemstone": {
+        "Fine Peridot Gemstone": 80
+    },
     "Flawless Ruby Gemstone": {
         "Fine Ruby Gemstone": 80
     },
@@ -79,5 +106,41 @@
     },
     "Flawless Topaz Gemstone": {
         "Fine Topaz Gemstone": 80
+    },
+    "Perfect Amber Gemstone": {
+        "Flawless Amber Gemstone": 5
+    },
+    "Perfect Amethyst Gemstone": {
+        "Flawless Amethyst Gemstone": 5
+    },
+    "Perfect Aquamarine Gemstone": {
+        "Flawless Aquamarine Gemstone": 5
+    },
+    "Perfect Citrine Gemstone": {
+        "Flawless Citrine Gemstone": 5
+    },
+    "Perfect Jade Gemstone": {
+        "Flawless Jade Gemstone": 5
+    },
+    "Perfect Jasper Gemstone": {
+        "Flawless Jasper Gemstone": 5
+    },
+    "Perfect Onyx Gemstone": {
+        "Flawless Onyx Gemstone": 5
+    },
+    "Perfect Opal Gemstone": {
+        "Flawless Opal Gemstone": 5
+    },
+    "Perfect Peridot Gemstone": {
+        "Flawless Peridot Gemstone": 5
+    },
+    "Perfect Ruby Gemstone": {
+        "Flawless Ruby Gemstone": 5
+    },
+    "Perfect Sapphire Gemstone": {
+        "Flawless Sapphire Gemstone": 5
+    },
+    "Perfect Topaz Gemstone": {
+        "Flawless Topaz Gemstone": 5
     }
 }

@@ -1,51 +1,84 @@
-.modify-container {
-    max-width: 600px;
-    margin: 70px auto 0; /* Added top margin to account for fixed navbar */
-    padding: 20px;
+#resource-modify-container {
+    max-width: 1200px;
+    margin: 70px auto 0;
+    padding: 2rem;
 }
 
-.modify-header {
+#resource-modify-header {
     color: var(--primary-color);
     text-align: center;
     margin-bottom: 2rem;
+    font-size: 2.5rem;
 }
 
-.search-input {
-    width: 100%;
+#resource-modify-layout {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+#resource-search-section {
+    background: var(--card-background);
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+#resource-search-input {
+    width: calc(100% - 24px);
     padding: 12px;
-    border: 2px solid var(--primary-color);
-    border-radius: 5px;
+    border: 2px solid var(--secondary-color);
+    border-radius: 8px;
     font-size: 1rem;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
+    transition: all 0.3s ease;
 }
 
-.resource-list {
+#resource-search-input:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+    outline: none;
+}
+
+#resource-items-list {
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    position: relative; /* Added for proper z-index layering */
-    z-index: 1; /* Ensure list appears below navbar */
 }
 
-.resource-item {
+.resource-modify-item {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: var(--card-background);
+    background-color: var(--background-color);
     padding: 1rem;
     border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
 }
 
-.amount-controls {
+.resource-modify-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.resource-modify-name {
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+.resource-amount-controls {
     display: flex;
     align-items: center;
-    gap: 1rem;
+    gap: 0.5rem;
 }
 
-.amount-controls button {
-    width: 36px;
-    height: 36px;
+.resource-amount-controls button {
+    width: 32px;
+    height: 32px;
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -57,26 +90,113 @@
     transition: all 0.3s ease;
 }
 
-.amount-controls button:hover {
+.resource-amount-controls button:hover {
     background-color: var(--primary-color);
     transform: translateY(-2px);
 }
 
-.submit-button {
+.resource-amount-controls input {
+    width: 60px;
+    padding: 0.5rem;
+    border: 2px solid #e0e0e0;
+    border-radius: 6px;
+    text-align: center;
+}
+
+#resource-modifications-section {
+    background: var(--card-background);
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    height: fit-content;
+    position: sticky;
+    top: 90px;
+}
+
+#modifications-title {
+    color: var(--secondary-color);
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+#modified-items-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.modified-resource-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.8rem 1rem;
+    background-color: var(--background-color);
+    border-radius: 8px;
+}
+
+.modified-resource-name {
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+.modified-resource-amount {
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 0.4rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+#resource-submit-button {
     display: block;
     width: 100%;
-    margin-top: 2rem;
     padding: 1rem;
     background-color: var(--secondary-color);
     color: white;
     border: none;
-    border-radius: 5px;
+    border-radius: 8px;
     font-size: 1.1rem;
     cursor: pointer;
     transition: all 0.3s ease;
 }
 
-.submit-button:hover {
-    background-color: var(--accent-color);
+#resource-submit-button:hover {
+    background-color: var(--primary-color);
     transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+/* Scrollbar styling */
+#resource-search-section::-webkit-scrollbar {
+    width: 6px;
+}
+
+#resource-search-section::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 3px;
+}
+
+#resource-search-section::-webkit-scrollbar-thumb {
+    background: var(--secondary-color);
+    border-radius: 3px;
+}
+
+#resource-search-section::-webkit-scrollbar-thumb:hover {
+    background: var(--primary-color);
+}
+
+@media (max-width: 768px) {
+    #resource-modify-layout {
+        grid-template-columns: 1fr;
+    }
+
+    #resource-modifications-section {
+        position: static;
+    }
+
+    #resource-search-section {
+        max-height: 50vh;
+    }
 }

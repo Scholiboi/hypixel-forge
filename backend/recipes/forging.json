@@ -1,4 +1,45 @@
 {
+    "Refined Diamond": {
+        "Enchanted Diamond Block": 2
+    },
+    "Refined Mithril": {
+        "Enchanted Mithril": 160
+    },
+    "Refined Titanium": {
+        "Enchanted Titanium": 16
+    },
+    "Refined Umber": {
+        "Enchanted Umber": 160
+    },
+    "Refined Tungsten": {
+        "Enchanted Tungsten": 160
+    },
+    "Bejeweled Handle": {
+        "Glacite Jewel": 3
+    },
+    "Drill Motor": {
+        "Treasurite": 10,
+        "Enchanted Iron Block": 1,
+        "Enchanted Redstone Block": 3,
+        "Golden Plate": 1
+    },
+    "Fuel Canister": {
+        "Enchanted Coal Block": 2
+    },
+    "Gemstone Mixture": {
+        "Fine Jade Gemstone": 4,
+        "Fine Amber Gemstone": 4,
+        "Fine Amethyst Gemstone": 4,
+        "Fine Sapphire Gemstone": 4,
+        "Sludge Juice": 320
+    },
+    "Glacite Amalgamation": {
+        "Fine Onyx Gemstone": 4,
+        "Fine Citrine Gemstone": 4,
+        "Fine Peridot Gemstone": 4,
+        "Fine Aquamarine Gemstone": 4,
+        "Enchanted Glacite": 256
+    },
     "Golden Plate": {
         "Refined Diamond": 1,
         "Enchanted Gold Block": 2,
@@ -7,41 +48,463 @@
     "Mithril Plate": {
         "Refined Titanium": 1,
         "Refined Mithril": 5,
-        "Enchanted Iron Block": 1,
-        "Golden Plate": 1
-    },
-    "Drill Motor": {
-        "Enchanted Iron Block": 1,
-        "Enchanted Redstone Block": 3,
         "Golden Plate": 1,
-        "Treasurite": 10
+        "Enchanted Iron Block": 1
     },
-    "Gemstone Mixture": {
-        "Fine Amber Gemstone": 4,
-        "Fine Amethyst Gemstone": 4,
-        "Fine Jade Gemstone": 4,
-        "Fine Sapphire Gemstone": 4,
-        "Sludge Juice": 320
+    "Tungsten Plate": {
+        "Refined Tungsten": 4,
+        "Glacite Amalgamation": 1
+    },
+    "Umber Plate": {
+        "Refined Umber": 4,
+        "Glacite Amalgamation": 1
+    },
+    "Perfect Plate": {
+        "Umber Plate": 1,
+        "Tungsten Plate": 1,
+        "Mithril Plate": 1
+    },
+    "Mithril Drill SX-R226": {
+        "Refined Mithril": 3,
+        "Fuel Canister": 1,
+        "Drill Motor": 1
+    },
+    "Mithril Drill SX-R326": {
+        "Mithril Drill SX-R226": 1,
+        "Golden Plate": 1,
+        "Mithril Plate": 1
+    },
+    "Ruby Drill TX-15": {
+        "Fine Ruby Gemstone": 6,
+        "Fuel Canister": 1,
+        "Drill Motor": 1
+    },
+    "Gemstone Drill LT-522": {
+        "Ruby Drill TX-15": 1,
+        "Gemstone Mixture": 3
+    },
+    "Topaz Drill KGR-12": {
+        "Gemstone Drill LT-522": 1,
+        "Flawless Topaz Gemstone": 1,
+        "Gemstone Mixture": 3,
+        "Magma Core": 8
+    },
+    "Jasper Drill X": {
+        "Topaz Drill KGR-12": 1,
+        "Flawless Jasper Gemstone": 1,
+        "Treasurite": 100,
+        "Magma Core": 16
+    },
+    "Polished Topaz Rod": {
+        "Flawless Topaz Gemstone": 2,
+        "Bejeweled Handle": 3
     },
     "Titanium Drill DR-X355": {
         "Refined Titanium": 8,
         "Refined Mithril": 8,
-        "Golden Plate": 6,
         "Drill Motor": 1,
-        "Fuel Canister": 1
+        "Fuel Canister": 1,
+        "Golden Plate": 6
+    },
+    "Titanium Drill DR-X455": {
+        "Titanium Drill DR-X355": 1,
+        "Refined Diamond": 10,
+        "Refined Titanium": 12,
+        "Mithril Plate": 5
+    },
+    "Titanium Drill DR-X555": {
+        "Titanium Drill DR-X455": 1,
+        "Refined Diamond": 20,
+        "Refined Titanium": 16,
+        "Enchanted Iron Block": 2,
+        "Mithril Plate": 10,
+        "Plasma": 20
     },
     "Titanium Drill DR-X655": {
+        "Titanium Drill DR-X555": 1,
+        "Flawless Ruby Gemstone": 1,
+        "Corleonite": 30,
+        "Refined Diamond": 5,
         "Refined Titanium": 32,
         "Gemstone Mixture": 16,
-        "Corleonite": 30,
-        "Mithril Plate": 10,
-        "Refined Diamond": 5
+        "Mithril Plate": 10
+    },
+    "Chisel": {
+        "Bejeweled Handle": 1,
+        "Tungsten": 64
+    },
+    "Reinforced Chisel": {
+        "Chisel": 1,
+        "Refined Tungsten": 2,
+        "Refined Umber": 2,
+        "Bejeweled Handle": 1
+    },
+    "Glacite-Plated Chisel": {
+        "Reinforced Chisel": 1,
+        "Glacite Amalgamation": 8,
+        "Mithril Plate": 1,
+        "Bejeweled Handle": 1
+    },
+    "Perfect Chisel": {
+        "Glacite-Plated Chisel": 1,
+        "Perfect Plate": 1,
+        "Bejeweled Handle": 1
+    },
+    "Divan's Drill": {
+        "Titanium Drill DR-X655": 1,
+        "Divan's Alloy": 1
+    },
+    "Diamonite": {
+        "Refined Diamond": 3
+    },
+    "Pocket Iceberg": {
+        "Glacite Jewel": 5
+    },
+    "Petrified Starfall": {
+        "Starfall": 512
+    },
+    "Pure Mithril": {
+        "Refined Mithril": 2
+    },
+    "Dwarven Geode": {
+        "Enchanted Cobblestone": 128,
+        "Treasurite": 64
+    },
+    "Titanium Tesseract": {
+        "Refined Titanium": 1,
+        "Enchanted Lapis Lazuli": 16
+    },
+    "Gleaming Crystal": {
+        "Glossy Gemstone": 32,
+        "Refined Mithril": 1,
+        "Refined Diamond": 2
+    },
+    "Scorched Topaz": {
+        "Enchanted Hard Stone": 128,
+        "Flawless Topaz Gemstone": 1
+    },
+    "Amber Material": {
+        "Fine Amber Gemstone": 12,
+        "Golden Plate": 1
+    },
+    "Frigid Husk": {
+        "Glacite Amalgamation": 4,
+        "Flawless Onyx Gemstone": 1
+    },
+    "Starfall Seasoning": {
+        "Treasurite": 16,
+        "Starfall": 64
+    },
+    "Goblin Omelette": {
+        "Goblin Egg": 96
+    },
+    "Spicy Goblin Omelette": {
+        "Red Goblin Egg": 96,
+        "Flawless Ruby Gemstone": 1,
+        "Goblin Omelette": 1
+    },
+    "Pesto Goblin Omelette": {
+        "Green Goblin Egg": 96,
+        "Flawless Jade Gemstone": 1,
+        "Goblin Omelette": 1
+    },
+    "Sunny Side Goblin Omelette": {
+        "Yellow Goblin Egg": 96,
+        "Flawless Topaz Gemstone": 1,
+        "Goblin Omelette": 1
+    },
+    "Blue Cheese Goblin Omelette": {
+        "Blue Goblin Egg": 96,
+        "Flawless Sapphire Gemstone": 1,
+        "Goblin Omelette": 1
+    },
+    "Tungsten Regulator": {
+        "Perfect Opal Gemstone": 1,
+        "Fuel Canister": 5,
+        "Tungsten Plate": 5
     },
     "Mithril-Plated Drill Engine": {
         "Drill Motor": 2,
         "Mithril Plate": 1
     },
-    "Fuel Canister": {
-        "Enchanted Coal Block": 2
+    "Titanium-Plated Drill Engine": {
+        "Mithril-Plated Drill Engine": 1,
+        "Refined Titanium": 8,
+        "Drill Motor": 2
+    },
+    "Ruby-Polished Drill Engine": {
+        "Titanium-Plated Drill Engine": 1,
+        "Perfect Ruby Gemstone": 1,
+        "Precursor Apparatus": 4,
+        "Drill Motor": 5
+    },
+    "Sapphire-Polished Drill Engine": {
+        "Ruby-Polished Drill Engine": 1,
+        "Perfect Sapphire Gemstone": 3,
+        "Precursor Apparatus": 8,
+        "Drill Motor": 5,
+        "Plasma": 16
+    },
+    "Amber-Polished Drill Engine": {
+        "Sapphire-Polished Drill Engine": 1,
+        "Perfect Amber Gemstone": 5,
+        "Precursor Apparatus": 16,
+        "Drill Motor": 5,
+        "Plasma": 32
+    },
+    "Mithril-Infused Fuel Tank": {
+        "Refined Diamond": 5,
+        "Refined Mithril": 10,
+        "Fuel Canister": 5
+    },
+    "Titanium-Infused Fuel Tank": {
+        "Mithril-Infused Fuel Tank": 1,
+        "Refined Titanium": 10,
+        "Refined Diamond": 5,
+        "Fuel Canister": 5
+    },
+    "Gemstone Fuel Tank": {
+        "Titanium-Infused Fuel Tank": 1,
+        "Precursor Apparatus": 4,
+        "Gemstone Mixture": 10
+    },
+    "Perfectly-Cut Fuel Tank": {
+        "Gemstone Fuel Tank": 1,
+        "Precursor Apparatus": 16,
+        "Gemstone Mixture": 25,
+        "Plasma": 32
+    },
+    "Bejeweled Collar": {
+        "Refined Mithril": 4,
+        "Bejeweled Handle": 1
+    },
+    "Beacon II": {
+        "Enchanted Beacon": 1,
+        "Refined Mithril": 5,
+        "Beacon I": 1
+    },
+    "Beacon III": {
+        "Enchanted Beacon": 1,
+        "Refined Mithril": 10,
+        "Beacon II": 1
+    },
+    "Beacon IV": {
+        "Enchanted Beacon": 1,
+        "Refined Mithril": 20,
+        "Plasma": 1,
+        "Beacon III": 1
+    },
+    "Beacon V": {
+        "Enchanted Beacon": 1,
+        "Refined Mithril": 40,
+        "Plasma": 5,
+        "Beacon IV": 1
+    },
+    "Travel Scroll To The Dwarven Forge": {
+        "Titanium": 80,
+        "Enchanted Ender Pearl": 16,
+        "Mithril": 48
+    },
+    "Travel Scroll To The Dwarven Base Camp": {
+        "Flawless Onyx Gemstone": 1,
+        "Enchanted Ender Pearl": 16
+    },
+    "Power Crystal": {
+        "Nether Star": 256
+    },
+    "Secret Railroad Pass": {
+        "Flawless Ruby Gemstone": 1,
+        "Refined Mithril": 2,
+        "Corleonite": 8
+    },
+    "Tungsten Key": {
+        "Enchanted Lever": 1,
+        "Enchanted Tungsten": 192,
+        "Bejeweled Handle": 1
+    },
+    "Umber Key": {
+        "Enchanted Dead Bush": 1,
+        "Enchanted Umber": 192,
+        "Bejeweled Handle": 1
+    },
+    "Skeleton Key": {
+        "Tripwire Hook": 1,
+        "Perfect Plate": 1,
+        "Bejeweled Handle": 1
+    },
+    "Portable Campfire": {
+        "Furnace": 1,
+        "Refined Umber": 1,
+        "Match-Sticks": 16
+    },
+    "Mithril Necklace": {
+        "Enchanted Mithril": 3
+    },
+    "Mithril Cloak": {
+        "Enchanted Mithril": 3
+    },
+    "Mithril Belt": {
+        "Enchanted Mithril": 3
+    },
+    "Mithril Gauntlet": {
+        "Enchanted Mithril": 3
+    },
+    "Titanium Necklace": {
+        "Refined Mineral": 16,
+        "Refined Titanium": 1,
+        "Mithril Necklace": 1
+    },
+    "Titanium Cloak": {
+        "Refined Mineral": 16,
+        "Refined Titanium": 1,
+        "Mithril Cloak": 1
+    },
+    "Titanium Belt": {
+        "Refined Mineral": 16,
+        "Refined Titanium": 1,
+        "Mithril Belt": 1
+    },
+    "Titanium Gauntlet": {
+        "Refined Mineral": 16,
+        "Refined Titanium": 1,
+        "Mithril Gauntlet": 1
+    },
+    "Titanium Talisman": {
+        "Refined Titanium": 2
+    },
+    "Titanium Ring": {
+        "Refined Titanium": 6,
+        "Titanium Talisman": 1
+    },
+    "Titanium Artifact": {
+        "Refined Titanium": 12,
+        "Titanium Ring": 1
+    },
+    "Titanium Relic": {
+        "Refined Titanium": 20,
+        "Titanium Artifact": 1
+    },
+    "Divan's Powder Coating": {
+        "Glossy Gemstone": 32,
+        "Refined Mineral": 32,
+        "Divan Fragment": 5,
+        "Enchanted Gold Block": 16
+    },
+    "Helmet Of Divan": {
+        "Flawless Ruby Gemstone": 1,
+        "Divan Fragment": 5,
+        "Gemstone Mixture": 10
+    },
+    "Chestplate Of Divan": {
+        "Flawless Ruby Gemstone": 1,
+        "Divan Fragment": 8,
+        "Gemstone Mixture": 10
+    },
+    "Leggings Of Divan": {
+        "Flawless Ruby Gemstone": 1,
+        "Divan Fragment": 7,
+        "Gemstone Mixture": 10
+    },
+    "Boots Of Divan": {
+        "Flawless Ruby Gemstone": 1,
+        "Divan Fragment": 4,
+        "Gemstone Mixture": 10
+    },
+    "Amber Necklace": {
+        "Glossy Gemstone": 32,
+        "Flawless Amber Gemstone": 2
+    },
+    "Sapphire Cloak": {
+        "Glossy Gemstone": 32,
+        "Flawless Sapphire Gemstone": 2
+    },
+    "Jade Belt": {
+        "Glossy Gemstone": 32,
+        "Flawless Jade Gemstone": 2
+    },
+    "Amethyst Gauntlet": {
+        "Glossy Gemstone": 32,
+        "Flawless Amethyst Gemstone": 2
+    },
+    "Gemstone Chamber": {
+        "Worm Membrane": 100,
+        "Gemstone Mixture": 1
+    },
+    "Dwarven Handwarmers": {
+        "Flawless Jade Gemstone": 1,
+        "Flawless Amber Gemstone": 1,
+        "Tungsten Plate": 1,
+        "Umber Plate": 1
+    },
+    "Dwarven Metal Talisman": {
+        "Refined Umber": 4,
+        "Refined Tungsten": 4,
+        "Glacite Amalgamation": 4
+    },
+    "Pendant Of Divan": {
+        "Shattered Locket": 1,
+        "Perfect Plate": 1,
+        "Divan Fragment": 10
+    },
+    "Relic Of Power": {
+        "Power Artifact": 1,
+        "Perfect Plate": 1,
+        "Glacite Amalgamation": 32
+    },
+    "Enchanted Diamond Block": {
+        "Enchanted Diamond": 160
+    },
+    "Enchanted Diamond": {
+        "Diamond": 160
+    },
+    "Enchanted Mithril": {
+        "Mithril": 160
+    },
+    "Enchanted Titanium": {
+        "Titanium": 16
+    },
+    "Enchanted Umber": {
+        "Umber": 160
+    },
+    "Enchanted Tungsten": {
+        "Tungsten": 160
+    },
+    "Enchanted Iron Block": {
+        "Enchanted Iron": 160
+    },
+    "Enchanted Iron": {
+        "Iron Ingot": 160
+    },
+    "Enchanted Redstone Block": {
+        "Enchanted Redstone": 160
+    },
+    "Enchanted Redstone": {
+        "Redstone": 160
+    },
+    "Enchanted Coal Block": {
+        "Enchanted Coal": 160
+    },
+    "Enchanted Coal": {
+        "Coal": 160
+    },
+    "Enchanted Glacite": {
+        "Glacite": 160
+    },
+    "Enchanted Gold Block": {
+        "Enchanted Gold": 160
+    },
+    "Enchanted Gold": {
+        "Gold Ingot": 160
+    },
+    "Enchanted Lapis Lazuli": {
+        "Lapis Lazuli": 160
+    },
+    "Precursor Apparatus":{
+        "Control Switch": 1,
+        "Electron Transmitter": 1,
+        "FTX 3070": 1,
+        "Robotron Reflector": 1,
+        "Superlite Motor": 1,
+        "Synthetic Heart": 1
     }
 }

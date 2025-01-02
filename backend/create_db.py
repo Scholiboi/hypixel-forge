@@ -2,19 +2,49 @@ import json
 from app import app, db
 from models import Resource
 
-# with open('my_resources.json') as f:
-#     resources = json.load(f)
-forging = ["Rough Amber Gemstone", "Rough Amethyst Gemstone", "Rough Aquamarine Gemstone", "Rough Citrine Gemstone", "Rough Jade Gemstone", "Rough Jasper Gemstone", "Rough Ruby Gemstone", "Rough Sapphire Gemstone", "Rough Topaz Gemstone"]
-with app.app_context():
-    # db.create_all()
-    # i = 0
-    # for resource_i in resources:
-    #     db.session.add(Resource(id=i, name=resource_i, amount=resources[resource_i]))
-    #     i += 1
-    # db.session.commit()
-    # print('Resources added to database')
+gemstones = [
+    "Amber", "Amethyst", "Aquamarine", "Citrine", "Jade", 
+    "Jasper", "Onyx", "Opal", "Peridot", "Ruby", "Sapphire", "Topaz"
+]
 
-    # for item in forging:
-    #     db.session.add(Resource(name=item, amount=0))
-    db.session.add(Resource(name='Enchanted Coal Block', amount=0))
-    db.session.commit()
+tiers = ["Rough", "Flawed", "Fine", "Flawless", "Perfect"]
+
+precursor_apparatus = {
+        "Control Switch": 1,
+        "Electron Transmitter": 1,
+        "FTX 3070": 1,
+        "Robotron Reflector": 1,
+        "Superlite Motor": 1,
+        "Synthetic Heart": 1
+    }
+
+Drill_Engines = {
+    "Mithril-Plated Drill Engine": 1,
+    "Titanium-Plated Drill Engine": 1,
+    "Ruby-Polished Drill Engine": 1,
+    "Sapphire-Polished Drill Engine": 1,
+    "Amber-Polished Drill Engine": 1,
+}
+
+
+
+with app.app_context():
+    while True:
+    # for gemstone in gemstones:
+    #     for tier in tiers:
+    #         name = f"{tier} {gemstone} Gemstone"
+    #         db.session.add(Resource(name=name, amount=0))
+    # for key in precursor_apparatus:
+    #     db.session.add(Resource(name=key, amount=0))
+    # db.session.add(Resource(name="Precursor Apparatus", amount=0))
+    # db.session.add(Resource(name="Volta", amount=0))
+        customname = input()
+        # for key in Drill_Engines:
+        #     db.session.add(Resource(name=key, amount=0))
+        try:
+            db.session.add(Resource(name=customname, amount=0))
+        except:
+            print(f'"{customname}" already exists in database')
+        else:
+            db.session.commit()
+            print(f'"{customname}" added to database')

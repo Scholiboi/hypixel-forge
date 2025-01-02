@@ -20,7 +20,7 @@ def get_resource_by_name(name):
 @rr_bp.route('/modify-resources', methods=['POST'])
 def modify_resource():
     data = request.json
-    data = data['searchedResources'] # type: ignore
+    data = data['newUpdatedResources'] # type: ignore
     # print(data)
     for resource_data in data:
         resource = Resource.query.filter_by(name=resource_data['name']).first()
