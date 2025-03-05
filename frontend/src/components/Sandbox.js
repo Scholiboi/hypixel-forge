@@ -38,8 +38,10 @@ const Sandbox = () => {
     const [recipe, setRecipe] = useState(null);
     const navigate = useNavigate();
 
+    const API_URL = process.env.REACT_APP_API_URL;
+ 
     useEffect(() => {
-        axios.get("http://localhost:5000/sandbox/get-recipes-names")
+        axios.get(`${API_URL}/api/sandbox/get-recipes-names`)
             .then((response) => {
                 setRecipesNames(response.data);
             })
@@ -51,7 +53,7 @@ const Sandbox = () => {
     const recipe_names = recipesNames.map((recipe) => ({ name: recipe }));
 
     const getRecipe = (name, amount) => {
-        axios.get(`http://localhost:5000/sandbox/get-recipe/${name}/${amount}`)
+        axios.get(`${API_URL}/api/sandbox/get-recipe/${name}/${amount}`)
             .then((response) => {
                 setRecipe(response.data);
             })

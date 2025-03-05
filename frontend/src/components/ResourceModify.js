@@ -4,6 +4,8 @@ import Navbar from "./navbar";
 import {useNavigate, useLocation} from "react-router-dom";
 import './ResourceModify.css';
 
+const API_URL = process.env.REACT_APP_API_URL;
+
 const ResourceModify = () => {
     const [searchTerm, setSearchTerm] = useState("");
     const [searchedResources, setSearchedResources] = useState([]);
@@ -56,7 +58,7 @@ const ResourceModify = () => {
 
     const SubmitModifications = async () => {
         try {
-            const response = await axios.post("http://localhost:5000/modify-resources", {newUpdatedResources});
+            const response = await axios.post(`${API_URL}/api/modify-resources`, {newUpdatedResources});
             navigate('/');
         }catch (err) {
             console.log(err);

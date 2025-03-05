@@ -1,7 +1,7 @@
 from flask import Flask, request, jsonify, Blueprint
 # ignore the error message, it's a false positive
 from models import Resource, db
-rr_bp = Blueprint(name='resource_route', import_name=__name__)
+rr_bp = Blueprint(name='resource_route', import_name=__name__, url_prefix='/api')
 
 @rr_bp.route('/resources', methods=['GET'])
 def get_resource():

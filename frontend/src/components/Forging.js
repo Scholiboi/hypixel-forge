@@ -5,6 +5,8 @@ import {useNavigate} from "react-router-dom";
 import './Forging.css';
 import Navbar from "./navbar";
 
+const API_URL = process.env.REACT_APP_API_URL;
+
 const TreeNode = ({node}) => {
     const [expanded, setExpanded] = useState(false);
 
@@ -39,7 +41,7 @@ const Forging = () => {
     const navigate = useNavigate();
 
     useEffect(() => {
-        axios.get("http://localhost:5000/sandbox/get-recipes-names")
+        axios.get(`${API_URL}/api/sandbox/get-recipes-names`)
             .then((response) => {
                 setRecipes(response.data);
             })
@@ -53,7 +55,7 @@ const Forging = () => {
     const getRecipe = (name, amount) => {
         setCraftable(false);
         setAmount(amount);
-        axios.get(`http://localhost:5000/sandbox/get-remaining-ingredients/${name}/${amount}`)
+        axios.get(`${API_URL}/api/sandbox/get-remaining-ingredients/${name}/${amount}`)
             .then((response) => {
                 setRecipe(response.data);
                 if(response.data.full_recipe.amount === 0){
@@ -67,7 +69,7 @@ const Forging = () => {
     };
 
     const craft = () => {
-        axios.post("http://localhost:5000/sandbox/craft", {name: recipe.full_recipe.name, amount: amount})
+        axios.post(`${API_URL}/api/sandbox/craft`, {name: recipe.full_recipe.name, amount: amount})
             .then((response) => {
                 console.log(response.data);
             })

@@ -1,7 +1,7 @@
 from flask import Flask, request, jsonify, Blueprint
 from models import Resource, db
 
-ir_bp = Blueprint(name='inventoryresources_route', import_name=__name__, url_prefix='/mod')
+ir_bp = Blueprint(name='inventoryresources_route', import_name=__name__, url_prefix='/api/mod')
 
 @ir_bp.route('/modify-resources', methods=['POST'])
 def modify_resource():

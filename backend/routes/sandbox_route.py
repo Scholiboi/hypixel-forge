@@ -1,23 +1,26 @@
+import os
+import sys
+import json
 from flask import Flask, request, jsonify, Blueprint
 from models import Resource, db
-import json
 
-sr_bp = Blueprint(name='sandbox_route', import_name=__name__, url_prefix='/sandbox')
+sr_bp = Blueprint(name='sandbox_route', import_name=__name__, url_prefix='/api/sandbox')
 
-# @sr_bp.route('/get-recipes', methods=["GET"])
-# def get_recipes():
-#     with open('recipes/forging.json') as f:
-#         forging = json.load(f)
-#     with open('recipes/gemstone_recipes.json') as f:
-#         gemstone_recipes = json.load(f)
-#     forging.update(gemstone_recipes)
-#     return jsonify(forging), 200
+def resource_path(relative_path):
+    # Get absolute path to resource, works for dev and for PyInstaller.!!!!!!
+    try:
+        base_path = sys._MEIPASS
+    except Exception:
+        base_path = os.path.abspath(".")
+    return os.path.join(base_path, relative_path)
 
 @sr_bp.route('/get-recipes-names', methods=["GET"])
 def get_recipe_names():
-    with open('recipes/forging.json') as f:
+    forging_path = resource_path('recipes/forging.json')
+    gemstone_path = resource_path('recipes/gemstone_recipes.json')
+    with open(forging_path) as f:
         forging = json.load(f)
-    with open('recipes/gemstone_recipes.json') as f:
+    with open(gemstone_path) as f:
         gemstone_recipes = json.load(f)
     forging.update(gemstone_recipes)
     return jsonify(list(forging.keys())), 200
@@ -34,9 +37,11 @@ def get_recipe(name,amt):
                 ingredients.append(expanded)
             return {'name': current_name, 'amount': multiplier, 'ingredients': ingredients}
 
-    with open('recipes/forging.json') as f:
+    forging_path = resource_path('recipes/forging.json')
+    gemstone_path = resource_path('recipes/gemstone_recipes.json')
+    with open(forging_path) as f:
         forging = json.load(f)
-    with open('recipes/gemstone_recipes.json') as f:
+    with open(gemstone_path) as f:
         gemstone_recipes = json.load(f)
     forging.update(gemstone_recipes)
 
@@ -130,9 +135,11 @@ def remaining_ingredients(name, amt):
                         ingredients.append(expanded)
             return {'name': current_name, 'amount': multiplier, 'ingredients': ingredients}
 
-    with open('recipes/forging.json') as f:
+    forging_path = resource_path('recipes/forging.json')
+    gemstone_path = resource_path('recipes/gemstone_recipes.json')
+    with open(forging_path) as f:
         forging = json.load(f)
-    with open('recipes/gemstone_recipes.json') as f:
+    with open(gemstone_path) as f:
         gemstone_recipes = json.load(f)
     forging.update(gemstone_recipes)
 
@@ -173,9 +180,11 @@ def craft():
         else:
             my_resources[current_item] -= multiplier
 
-    with open('recipes/forging.json') as f:
+    forging_path = resource_path('recipes/forging.json')
+    gemstone_path = resource_path('recipes/gemstone_recipes.json')
+    with open(forging_path) as f:
         forging = json.load(f)
-    with open('recipes/gemstone_recipes.json') as f:
+    with open(gemstone_path) as f:
         gemstone_recipes = json.load(f)
     forging.update(gemstone_recipes)
     my_resources = {resource.name: resource.amount for resource in Resource.query.all()}

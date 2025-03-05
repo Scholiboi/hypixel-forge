@@ -5,13 +5,15 @@ import Dropdown from "./Dropdown";
 import {useNavigate} from "react-router-dom";
 import './Resources.css';
 
+const API_URL = process.env.REACT_APP_API_URL;
+
 const Resources = () => {
     const [resources, setResources] = useState([]);
     // const [searchedResources, setSearchedResources] = useState(null);
     const navigate = useNavigate();
 
     const fetchResources = () => {
-        axios.get("http://localhost:5000/resources")
+        axios.get(`${API_URL}/api/resources`)
             .then((response) => {
                 const sortedResources = response.data.sort((a,b) => a.name.localeCompare(b.name));
                 setResources(sortedResources);
