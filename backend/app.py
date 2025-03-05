@@ -1,6 +1,9 @@
 import os
 import sys
-from flask import Flask, send_from_directory, abort
+import threading
+import time
+import webbrowser
+from flask import Flask, send_from_directory, abort, request, jsonify
 from flask_cors import CORS
 from models import db
 from routes.resource_route import rr_bp
@@ -43,5 +46,16 @@ def serve(path):
         # print("Error serving file:", e)
         return send_from_directory(app.static_folder, 'index.html')
 
+browser_opened = False
+
+def start_server():
+    global browser_opened
+    time.sleep(1)
+    if not browser_opened:
+        print('browser opened')
+        webbrowser.open("http://127.0.0.1:5000")
+        browser_opened = True
+
 if __name__ == '__main__':
-    app.run(debug=True, port=5000)
+    threading.Thread(target=start_server).start()
+    app.run(debug=False, port=5000)
