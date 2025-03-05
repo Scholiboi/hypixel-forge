@@ -1,44 +1,41 @@
-# Hypixel Forge - Full Stack Project
+# Hypixel Forge
 
-This project provides a Flask-based backend and a React-based frontend for managing and crafting resources.
+<div align="center">
+<img alt="Hypixel Forge Logo" src="https://via.placeholder.com/150?text=HF"><br>
+A sophisticated crafting simulator and resource management system inspired by Hypixel Skyblock  
+<br>
+<img alt="Python" src="https://img.shields.io/badge/Python-3.6+-blue.svg">
+<img alt="React" src="https://img.shields.io/badge/React-17.0+-61DAFB.svg">
+<img alt="Flask" src="https://img.shields.io/badge/Flask-2.0+-green.svg">
+</div>
 
-## Key Features
-- RESTful routes (Flask) to retrieve and modify resources.
-- React UI (Create React App) to display and manage resources.
-- Crafting and forging items with a React interface calling Flask endpoints.
-- Middleware for bridging data (SQLite using SQLAlchemy).
+## 🌟 Overview
+Hypixel Forge is an interactive crafting simulator that allows players to:
 
-## Setup Instructions
+- Manage and track various in-game resources  
+- Explore complex crafting recipes  
+- Simulate crafting operations  
+- View detailed crafting trees  
+- Track resource requirements and availability  
 
-### Backend (Flask)
-1. Make sure Python 3 is installed.
-2. Create a virtual environment:  
-   → python -m venv .venv
-3. Activate it:  
-   → .venv\Scripts\activate  (Windows)
-4. Install dependencies:  
-   → pip install -r requirements.txt
-5. Initialize database (if needed):  
-   → python backend/create_db.py
-6. Run the server:  
-   → python backend/app.py
+## ✨ Key Features
 
-### Frontend (React)
-1. Navigate to your frontend directory:  
-   → cd frontend
-2. Install dependencies:  
-   → npm install
-3. Start the development server:  
-   → npm start
+### 🏭 Dual Mode Interface
+- **Forge Mode**: Actively craft items and manage resources  
+- **View Mode**: Explore and study crafting recipes without consuming materials  
 
-## Usage
-- Once both servers are running, open http://localhost:3000 to view the React app.
-- The Flask server listens by default on http://127.0.0.1:5000.
+### 💎 Resource Management
+- Track various tiers of gemstones:  
+  - Amber, Amethyst, Aquamarine, Citrine, Jade, and more  
+  - Multiple quality tiers (Rough, Flawed, Fine, Flawless, Perfect)  
+- Monitor technical components:  
+  - Control Switches  
+  - Electron Transmitters  
+  - Various Drill Engines  
+  - Precursor Apparatus components  
 
-## Testing
-- In the frontend, run:
-  → npm test
-- Backend routes can be tested with any API client (e.g., Postman).
-
-## Contributing
-- Fork this repo and open a pull request for proposed fixes or new features.
+### 🛠️ Crafting System
+- Interactive crafting tree visualization  
+- Real-time resource requirement checking  
+- Multi-level recipe dependencies  
+- Batch crafting support  
