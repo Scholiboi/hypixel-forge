@@ -1,5 +1,4 @@
 import os
-import sys
 import json
 from flask import Flask, request, jsonify, Blueprint
 from models import Resource, db
@@ -7,11 +6,7 @@ from models import Resource, db
 sr_bp = Blueprint(name='sandbox_route', import_name=__name__, url_prefix='/api/sandbox')
 
 def resource_path(relative_path):
-    # Get absolute path to resource, works for dev and for PyInstaller.!!!!!!
-    try:
-        base_path = sys._MEIPASS
-    except Exception:
-        base_path = os.path.abspath(".")
+    base_path = os.path.abspath(".")
     return os.path.join(base_path, relative_path)
 
 @sr_bp.route('/get-recipes-names', methods=["GET"])
