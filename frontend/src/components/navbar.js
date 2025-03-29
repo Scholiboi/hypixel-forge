@@ -9,50 +9,62 @@ const Navbar = ({transfer}) => {
         switch (location.pathname) {
             case '/':
                 return (
-                    <nav id="navbar-home">
-                        <p id="Header">Your resources</p>
+                    <nav className="mc-navbar" id="navbar-home">
+                        <p className="mc-navbar-title" id="Header">Hypixel Forge</p>
                         <div className="nav-items">
                             <p id="Sandbox">
-                                <a href='/sandbox'>Forge Menu</a>
+                                <button className="mc-button" onClick={() => window.location.href='/sandbox'}>
+                                    Forge Menu
+                                </button>
                             </p>
                             <p id="resource">
-                                <a onClick={transfer}>Modify Resources</a>
+                                <button className="mc-button" onClick={transfer}>
+                                    Modify Resources
+                                </button>
                             </p>
                         </div>
                     </nav>
                 );
             case '/sandbox':
                 return (
-                    <nav id="navbar-forge">
-                        <p id="Header">Forge Menu</p>
+                    <nav className="mc-navbar" id="navbar-forge">
+                        <p className="mc-navbar-title" id="Header">Forge Menu</p>
                         <div className="nav-items">
                             <p id="Home">
-                                <a href='/'>Home</a>
+                                <button className="mc-button" onClick={() => window.location.href='/'}>
+                                    Home
+                                </button>
                             </p>
                         </div>
                     </nav>
                 );
             case '/sandbox/forge':
                 return (
-                    <nav id="navbar-forge">
-                        <p id="Header">Forge Menu</p>
+                    <nav className="mc-navbar" id="navbar-forge">
+                        <p className="mc-navbar-title" id="Header">Forge Menu</p>
                         <div className="nav-items">
                             <p id="Home">
-                                <a href='/'>Home</a>
+                                <button className="mc-button" onClick={() => window.location.href='/'}>
+                                    Home
+                                </button>
                             </p>
                         </div>
                     </nav>
                 );
             default:
                 return (
-                    <nav id="navbar-default">
-                        <p id="Header">Forge Calculator</p>
+                    <nav className="mc-navbar" id="navbar-default">
+                        <p className="mc-navbar-title" id="Header">Hypixel Forge</p>
                         <div className="nav-items">
                             <p id="Sandbox">
-                                <a href='/sandbox'>Forge Menu</a>
+                                <button className="mc-button" onClick={() => window.location.href='/sandbox'}>
+                                    Forge Menu
+                                </button>
                             </p>
                             <p id="Home">
-                                <a href='/'>Home</a>
+                                <button className="mc-button" onClick={() => window.location.href='/'}>
+                                    Home
+                                </button>
                             </p>
                         </div>
                     </nav>
