@@ -176,6 +176,7 @@ color: black;
   background-color: var(--mc-very-light-brown);
   border-left: 4px solid var(--mc-gold);
   font-size: 1rem;
+  color: black;
 }
 
 .refresh-button {
