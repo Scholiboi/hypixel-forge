@@ -30,3 +30,7 @@ def reset_resources():
         resource.amount = 0
     db.session.commit()
     return jsonify({'message': 'Resources reset successfully'}), 200
+
+@ir_bp.route('/modify-resources/sacks', methods=['POST'])
+def modify_sacks():
+    return jsonify({'message': 'Sack modification not implemented'}), 501
