@@ -1,13 +1,16 @@
-# Hypixel Forge
+# Hypixel Dwarven Forge Calculator
 
 <div align="center">
 <img alt="Hypixel Forge Logo" src="https://via.placeholder.com/150?text=HF"><br>
 A sophisticated crafting simulator and resource management system inspired by Hypixel Skyblock  
 <br>
-<img alt="Python" src="https://img.shields.io/badge/Python-3.6+-blue.svg">
+<img alt="Python" src="https://img.shields.io/badge/Python-3.12+-blue.svg">
 <img alt="React" src="https://img.shields.io/badge/React-17.0+-61DAFB.svg">
 <img alt="Flask" src="https://img.shields.io/badge/Flask-2.0+-green.svg">
 </div>
+
+### This application is not run standalone. It runs via my Fabric 1.21.1+ java mod
+Here is the link to the Mod [Modrinth](https://modrinth.com/mod/skyblock-mining-resource-reader) | [Github](https://github.com/Scholiboi/InventoryReader-HypixelMining)
 
 ## 🌟 Overview
 Hypixel Forge is an interactive crafting simulator that allows players to:
