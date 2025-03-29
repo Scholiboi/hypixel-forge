@@ -76,7 +76,6 @@ nav a {
     align-items: center;
 }
 
-/* Responsive design */
 @media (max-width: 768px) {
     nav {
         padding: 0.8rem 1rem;

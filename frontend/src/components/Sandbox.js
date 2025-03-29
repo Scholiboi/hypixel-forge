@@ -80,9 +80,9 @@ const Sandbox = () => {
 
             {recipe && recipe.simple_recipe && recipe.full_recipe && (
                 <div className="recipe-details">
-                    <h2>{recipe.name} Recipe</h2>
+                    <h2 className='recipe-header'>{recipe.name} Recipe</h2>
 
-                    <h3>Required Materials</h3>
+                    <h3 className="h3-headers">Required Materials</h3>
                     <ul className="simple-recipe-list">
                         {Object.entries(recipe.simple_recipe).map(([item, qty]) => (
                             <li key={item} className="simple-recipe-item">
@@ -92,7 +92,7 @@ const Sandbox = () => {
                         ))}
                     </ul>
 
-                    <h3>Crafting Tree</h3>
+                    <h3 className="h3-headers">Crafting Tree</h3>
                     <div className="recipe-tree">
                         <TreeNode node={recipe.full_recipe} />
                     </div>

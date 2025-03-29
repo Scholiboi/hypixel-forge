@@ -1,0 +1,82 @@
+@keyframes block-break {
+    0% { transform: scale(1); }
+    50% { transform: scale(0.9); opacity: 0.7; }
+    100% { transform: scale(1); opacity: 1; }
+  }
+  
+  .breaking-animation {
+    animation: block-break 0.2s ease-in-out;
+  }
+  
+  @keyframes pop-in {
+    0% { transform: scale(0); opacity: 0; }
+    80% { transform: scale(1.1); }
+    100% { transform: scale(1); opacity: 1; }
+  }
+  
+  .pop-in {
+    animation: pop-in 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+  }
+  
+  @keyframes fade-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  .fade-in {
+    animation: fade-in 0.5s ease forwards;
+  }
+  
+  @keyframes mining {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(-5deg); }
+    75% { transform: rotate(5deg); }
+    100% { transform: rotate(0deg); }
+  }
+  
+  .mining-animation {
+    animation: mining 0.3s infinite;
+  }
+  
+  @keyframes exp-fill {
+    0% { width: 0%; }
+    100% { width: 100%; }
+  }
+  
+  .exp-bar-fill {
+    animation: exp-fill 2s ease-out forwards;
+  }
+  
+  .item-hover {
+    transition: all 0.2s ease;
+  }
+  
+  .item-hover:hover {
+    transform: translateY(-5px);
+    filter: brightness(1.2);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  }
+  
+  @keyframes float-up {
+    0% { transform: translateY(0); opacity: 1; }
+    100% { transform: translateY(-20px); opacity: 0; }
+  }
+  
+  .float-text {
+    position: absolute;
+    animation: float-up 1s forwards;
+    pointer-events: none;
+  }
+
+  @keyframes pickaxe-swing {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(-30deg); }
+    50% { transform: rotate(0deg); }
+    75% { transform: rotate(30deg); }
+    100% { transform: rotate(0deg); }
+  }
+  
+  .pickaxe-swing {
+    animation: pickaxe-swing 0.5s infinite;
+    transform-origin: bottom right;
+  }

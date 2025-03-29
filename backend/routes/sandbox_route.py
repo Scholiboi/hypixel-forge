@@ -1,5 +1,4 @@
 import os
-import sys
 import json
 from flask import Flask, request, jsonify, Blueprint
 from models import Resource, db

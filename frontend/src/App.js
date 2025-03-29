@@ -1,6 +1,8 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes} from 'react-router-dom';
+import {BrowserRouter as Router,Route,Routes} from 'react-router-dom';
 import './App.css';
+import './components/minecraft-theme.css'; 
+import './components/Animations.css'; 
 import Resources from './components/Resources';
 import NotFound from './components/NotFound';
 import ResourceModify from './components/ResourceModify';
@@ -9,7 +11,7 @@ import Forging from './components/Forging';
 function App() {
     return (
         <Router>
-            <div>
+            <div className="minecraft-app">
                 <Routes>
                     <Route path="/" element={<Resources/>} />
                     <Route path="/modify" element={<ResourceModify/>} />

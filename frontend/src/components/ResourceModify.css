@@ -67,7 +67,7 @@
 
 .resource-modify-name {
     font-weight: 500;
-    color: var(--text-color);
+    color: black;
 }
 
 .resource-amount-controls {
@@ -137,7 +137,7 @@
 
 .modified-resource-name {
     font-weight: 500;
-    color: var(--text-color);
+    color: black;
 }
 
 .modified-resource-amount {
@@ -168,7 +168,6 @@
     box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
 
-/* Scrollbar styling */
 #resource-search-section::-webkit-scrollbar {
     width: 6px;
 }
