@@ -7,15 +7,6 @@ import './Resources.css';
 
 const API_URL = process.env.REACT_APP_API_URL;
 
-const getRarityClass = (name) => {
-    if (name.includes("Perfect")) return "mc-legendary";
-    if (name.includes("Flawless")) return "mc-epic";
-    if (name.includes("Fine")) return "mc-rare";
-    if (name.includes("Flawed")) return "mc-uncommon";
-    if (name.includes("Rough")) return "mc-common";
-    return "";
-}
-
 const Resources = () => {
     const [resources, setResources] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
@@ -79,7 +70,7 @@ const Resources = () => {
             <div className="resources-list">
                 {final_resources.map((resource) => (
                     <div className="mc-item" key={resource.id}>
-                        <span className={`mc-item-name ${getRarityClass(resource.name)}`}>{resource.name}</span>
+                        <span className="mc-item-name">{resource.name}</span>
                         <span className="mc-item-count">{resource.amount}</span>
                     </div>
                 ))}
