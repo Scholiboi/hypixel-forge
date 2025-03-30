@@ -43,7 +43,7 @@ exe = EXE(
     a.zipfiles,
     a.datas,
     [],
-    name='hypixel_forge',
+    name='hypixel_dwarven_forge-v1.1.1',
     debug=False,
     bootloader_ignore_signals=False,
     strip=False,

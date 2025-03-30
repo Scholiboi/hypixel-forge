@@ -176,33 +176,7 @@ color: black;
   background-color: var(--mc-very-light-brown);
   border-left: 4px solid var(--mc-gold);
   font-size: 1rem;
-}
-
-.craft-button {
-  display: block;
-  width: 100%;
-  margin: 1.5rem auto 1rem;
-  padding: 1rem;
-  font-size: 1.3rem;
-  background-color: var(--mc-medium-green);
-  border-bottom: 6px solid var(--mc-dark-green);
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-.craft-button:hover {
-  background-color: var(--mc-light-green);
-}
-
-.craft-button:active {
-  border-bottom: 3px solid var(--mc-dark-green);
-  transform: translateY(3px);
-}
-
-.craft-button:disabled {
-  background-color: var(--mc-gray);
-  border-color: var(--mc-dark-gray);
-  cursor: not-allowed;
+  color: black;
 }
 
 .refresh-button {
@@ -242,10 +216,5 @@ color: black;
   .tree-content {
     padding: 0.6rem;
     flex-wrap: wrap;
-  }
-
-  .craft-button {
-    padding: 0.8rem;
-    font-size: 1.1rem;
   }
 }

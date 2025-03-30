@@ -93,12 +93,6 @@
     font-weight: bold;
   }
   
-  .mc-common { color: var(--mc-white); }
-  .mc-uncommon { color: var(--mc-light-green); }
-  .mc-rare { color: var(--mc-light-blue); }
-  .mc-epic { color: var(--mc-diamond-blue); }
-  .mc-legendary { color: var(--mc-gold); }
-
   @keyframes crafting {
     0% { transform: scale(1); }
     50% { transform: scale(1.05); }

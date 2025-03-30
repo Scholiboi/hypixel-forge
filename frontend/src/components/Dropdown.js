@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './Dropdown.css';
 import {useLocation} from 'react-router-dom';
 
-const Dropdown = ({ items , func = null}) => {
+const Dropdown = ({items , func = null}) => {
     const [searchTerm, setSearchTerm] = useState('');
     const [filteredItems, setFilteredItems] = useState([]);
     const [amount, setAmount] = useState(1);
@@ -51,15 +51,6 @@ const Dropdown = ({ items , func = null}) => {
         };
     }, []);
 
-    const getRarityClass = (name) => {
-        if (name.includes("Perfect")) return "mc-legendary";
-        if (name.includes("Flawless")) return "mc-epic";
-        if (name.includes("Fine")) return "mc-rare";
-        if (name.includes("Flawed")) return "mc-uncommon";
-        if (name.includes("Rough")) return "mc-common";
-        return "";
-    }
-
     const renderDropdown = () => {
         switch(location.pathname) {
             case '/':
@@ -83,7 +74,7 @@ const Dropdown = ({ items , func = null}) => {
                                         className="dropdown-item" 
                                         key={index}
                                     >
-                                        <span className={`item-name ${getRarityClass(item.name)}`}>
+                                        <span className="item-name">
                                             {item.name}
                                         </span>
                                         <span className="item-count">{item.amount}</span>
@@ -124,7 +115,7 @@ const Dropdown = ({ items , func = null}) => {
                                         className="dropdown-item" 
                                         key={index}
                                     >
-                                        <span className={`item-name ${getRarityClass(item.name)}`}>
+                                        <span className="item-name">
                                             {item.name}
                                         </span>
                                         <span className="item-count">{item.amount}</span>

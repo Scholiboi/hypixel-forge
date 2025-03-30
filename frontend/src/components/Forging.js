@@ -14,15 +14,6 @@ const TreeNode = ({node}) => {
     if (!node) return null;
     const hasChildren = node.ingredients && node.ingredients.length > 0;
     
-    const getRarityClass = (name) => {
-        if (name.includes("Perfect")) return "mc-legendary";
-        if (name.includes("Flawless")) return "mc-epic";
-        if (name.includes("Fine")) return "mc-rare";
-        if (name.includes("Flawed")) return "mc-uncommon";
-        if (name.includes("Rough")) return "mc-common";
-        return "";
-    }
-    
     return (
         <div className="tree-node">
             <div 
@@ -33,7 +24,7 @@ const TreeNode = ({node}) => {
             >
                 <span className="tree-text">You need</span>
                 <span className="tree-amount">{node.amount}×</span>
-                <span className={`tree-name ${getRarityClass(node.name)}`}>{node.name}</span>
+                <span className="tree-name">{node.name}</span>
                 {hasChildren && (
                     <span className="tree-toggle">{expanded ? "▼" : "▶"}</span>
                 )}
@@ -54,7 +45,6 @@ const Forging = () => {
     const [recipe, setRecipe] = useState(null);
     const [craftable, setCraftable] = useState(false);
     const [amount, setAmount] = useState(1);
-    const [isCrafting, setIsCrafting] = useState(false);
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -91,24 +81,6 @@ const Forging = () => {
             })
     };
 
-    const craft = () => {
-        setIsCrafting(true);
-        axios.post(`${API_URL}/api/sandbox/craft`, {name: recipe.full_recipe.name, amount: amount})
-            .then((response) => {
-                console.log(response.data);
-                setTimeout(() => {
-                    setCraftable(false);
-                    setRecipe(null);
-                    setAmount(1);
-                    setIsCrafting(false);
-                }, 1500);
-            })
-            .catch((err) => {
-                console.log(err);
-                setIsCrafting(false);
-            });
-    }
-
     const viewMode = () => {
         navigate('/sandbox');
     };
@@ -137,15 +109,6 @@ const Forging = () => {
                         <li key={index} className="message-item">{message}</li>
                     ))}
                 </ul>}
-                {recipe && craftable && (
-                    <button 
-                        className={`mc-button craft-button ${isCrafting ? 'crafting-animation' : ''}`} 
-                        onClick={craft}
-                        disabled={isCrafting}
-                    >
-                        {isCrafting ? 'Crafting...' : 'Craft'}
-                    </button>
-                )}
                 {recipe && (
                     <button className="mc-button refresh-button" onClick={refreshRecipe}>
                         ↻ Refresh
