@@ -1,31 +1,5 @@
-import json
 from app import app, db
 from models import Resource
-
-gemstones = [
-    "Amber", "Amethyst", "Aquamarine", "Citrine", "Jade", 
-    "Jasper", "Onyx", "Opal", "Peridot", "Ruby", "Sapphire", "Topaz"
-]
-
-tiers = ["Rough", "Flawed", "Fine", "Flawless", "Perfect"]
-
-precursor_apparatus = {
-        "Control Switch": 1,
-        "Electron Transmitter": 1,
-        "FTX 3070": 1,
-        "Robotron Reflector": 1,
-        "Superlite Motor": 1,
-        "Synthetic Heart": 1
-    }
-
-Drill_Engines = {
-    "Mithril-Plated Drill Engine": 1,
-    "Titanium-Plated Drill Engine": 1,
-    "Ruby-Polished Drill Engine": 1,
-    "Sapphire-Polished Drill Engine": 1,
-    "Amber-Polished Drill Engine": 1,
-}
-
 
 #
 # with app.app_context():
@@ -49,10 +23,7 @@ Drill_Engines = {
 #             db.session.commit()
 #             print(f'"{customname}" added to database')
 
-resources = {}
-
 with app.app_context():
     for resource in Resource.query.all():
-        resources[resource.name] = resource.amount
-
-print(json.dumps(resources, indent=4))
+       resource.amount = 0
+    db.session.commit()
