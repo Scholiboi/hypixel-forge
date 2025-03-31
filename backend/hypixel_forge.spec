@@ -61,7 +61,6 @@ exe = EXE(
     console=True,
 )
 
-# For macOS, you can also create an app bundle
 if platform.system() == "Darwin":
     app = BUNDLE(
         exe,
