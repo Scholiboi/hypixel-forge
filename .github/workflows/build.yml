@@ -25,6 +25,9 @@ jobs:
         pip install -r backend/requirements.txt
         pip install pyinstaller
     - name: Build Frontend
+      env:
+        REACT_APP_API_URL: ${{ secrets.REACT_APP_API_URL }}
+        CI: false
       run: |
         cd frontend
         npm ci
@@ -58,6 +61,9 @@ jobs:
         pip install -r backend/requirements.txt
         pip install pyinstaller
     - name: Build Frontend
+      env:
+        REACT_APP_API_URL: ${{ secrets.REACT_APP_API_URL }}
+        CI: false
       run: |
         cd frontend
         npm ci
@@ -91,6 +97,9 @@ jobs:
         pip install -r backend/requirements.txt
         pip install pyinstaller
     - name: Build Frontend
+      env:
+        REACT_APP_API_URL: ${{ secrets.REACT_APP_API_URL }}
+        CI: false
       run: |
         cd frontend
         npm ci
