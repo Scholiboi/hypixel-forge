@@ -1,6 +1,7 @@
 # -*- mode: python -*-
 
 import os
+import platform
 from PyInstaller.utils.hooks import collect_submodules
 
 block_cipher = None
@@ -11,7 +12,7 @@ except NameError:
     this_dir = os.getcwd()
 
 datas = [
-    (os.path.join(this_dir, '..', 'frontend', 'build'), 'frontend/build'),
+    (os.path.join(this_dir, '..', 'frontend', 'build'), os.path.join('frontend', 'build')),
     (os.path.join(this_dir, 'recipes'), 'recipes'),
     (os.path.join(this_dir, 'instance'), 'instance')
 ]
@@ -22,8 +23,8 @@ hiddenimports += collect_submodules('routes')
 hiddenimports += collect_submodules('models')
 
 a = Analysis(
-    ['app.py'],  # Main Flask file
-    pathex=[this_dir],  # ensures PyInstaller can locate your current directory
+    ['app.py'],
+    pathex=[this_dir],
     binaries=[],
     datas=datas,
     hiddenimports=hiddenimports,
@@ -36,6 +37,13 @@ a = Analysis(
 
 pyz = PYZ(a.pure, a.zipped_data, cipher=block_cipher)
 
+if platform.system() == "Darwin":
+    exe_name = 'hypixel_dwarven_forge-v1.1.2-macos'
+elif platform.system() == "Linux":
+    exe_name = 'hypixel_dwarven_forge-v1.1.2-linux'
+else:
+    exe_name = 'hypixel_dwarven_forge-v1.1.2-win'
+
 exe = EXE(
     pyz,
     a.scripts,
@@ -43,10 +51,18 @@ exe = EXE(
     a.zipfiles,
     a.datas,
     [],
-    name='hypixel_dwarven_forge-v1.1.1',
+    name=exe_name,
     debug=False,
     bootloader_ignore_signals=False,
     strip=False,
-    upx=False,  # Disable UPX
+    upx=False,
     console=True,
 )
+
+if platform.system() == "Darwin":
+    app = BUNDLE(
+        exe,
+        name='hypixel_dwarven_forge-v1.1.2.app',
+        icon=None,
+        bundle_identifier=None,
+    )
