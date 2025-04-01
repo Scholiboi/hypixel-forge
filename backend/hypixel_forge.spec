@@ -11,6 +11,7 @@ try:
 except NameError:
     this_dir = os.getcwd()
 
+# Use platform-agnostic path joining
 datas = [
     (os.path.join(this_dir, '..', 'frontend', 'build'), os.path.join('frontend', 'build')),
     (os.path.join(this_dir, 'recipes'), 'recipes'),
