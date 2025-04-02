@@ -1,0 +1,24 @@
+Hypixel Dwarven Forge v1.1.2 - Checksum Verification
+Generated: 2025-04-02 13:49:41
+------------------------------------------------------------
+
+File: hypixel_dwarven_forge-v1.1.2.exe
+Size: 17,098,728 bytes
+
+CHECKSUMS:
+MD5:     cd0fd0cd9a4977a0feeecaa8c0750eee
+SHA1:    2dba6b4808c9206cd89f216cd6d51c0fa7d5b1a1
+SHA256:  623f5acf0d1811cb5e93d038ade4c50df13011551aa14ab5526ee64d04ab9c9e
+
+VERIFICATION INSTRUCTIONS:
+To verify file integrity, compare the checksums above with those
+generated from your downloaded file using one of these methods:
+
+Windows (PowerShell):
+  Get-FileHash -Algorithm SHA256 hypixel_dwarven_forge-v1.1.2.exe
+
+Windows (Command Prompt):
+  certUtil -hashfile hypixel_dwarven_forge-v1.1.2.exe SHA256
+
+Linux/macOS:
+  sha256sum hypixel_dwarven_forge-v1.1.2.exe

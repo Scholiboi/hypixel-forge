@@ -38,12 +38,7 @@ a = Analysis(
 
 pyz = PYZ(a.pure, a.zipped_data, cipher=block_cipher)
 
-if platform.system() == "Darwin":
-    exe_name = 'hypixel_dwarven_forge-v1.1.2-macos'
-elif platform.system() == "Linux":
-    exe_name = 'hypixel_dwarven_forge-v1.1.2-linux'
-else:
-    exe_name = 'hypixel_dwarven_forge-v1.1.2-win'
+exe_name = 'hypixel_dwarven_forge-v1.1.2'
 
 exe = EXE(
     pyz,
@@ -59,11 +54,3 @@ exe = EXE(
     upx=False,
     console=True,
 )
-
-if platform.system() == "Darwin":
-    app = BUNDLE(
-        exe,
-        name='hypixel_dwarven_forge-v1.1.2.app',
-        icon=None,
-        bundle_identifier=None,
-    )
