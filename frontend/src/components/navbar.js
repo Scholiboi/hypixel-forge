@@ -10,7 +10,7 @@ const Navbar = ({transfer}) => {
             case '/':
                 return (
                     <nav className="mc-navbar" id="navbar-home">
-                        <p className="mc-navbar-title" id="Header">Hypixel Forge</p>
+                        <p className="mc-navbar-title" id="Header">Skyblock Mining Resource Reader</p>
                         <div className="nav-items">
                             <p id="Sandbox">
                                 <button className="mc-button" onClick={() => window.location.href='/sandbox'}>
@@ -54,7 +54,7 @@ const Navbar = ({transfer}) => {
             default:
                 return (
                     <nav className="mc-navbar" id="navbar-default">
-                        <p className="mc-navbar-title" id="Header">Hypixel Forge</p>
+                        <p className="mc-navbar-title" id="Header">Skyblock Mining Resource Reader</p>
                         <div className="nav-items">
                             <p id="Sandbox">
                                 <button className="mc-button" onClick={() => window.location.href='/sandbox'}>
