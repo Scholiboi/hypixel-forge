@@ -1,4 +1,5 @@
 # Hypixel Dwarven Forge Calculator
+## Also Known as Skyblock Mining Resource Reader App
 
 <div align="center">
 <img alt="Hypixel Forge Logo" src="https://via.placeholder.com/150?text=HF"><br>
